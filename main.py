@@ -10,11 +10,7 @@ from rf_api_client import RfApiClient
 from rf_api_client.rf_api_client import UserAuth
 from rf_client.tree_wrapper import NodeWrapper
 
-USERNAME = 'mrffff1940@mail.ru'
-PASSWORD = '89108297300:GleB'
-
 logging.basicConfig(level=logging.INFO)
-
 
 
 def first_line(title: str) -> str:
@@ -48,13 +44,19 @@ def print_tree(m: NodeWrapper, url: URL,
 
 
 async def map_in_table():
-    print('Ссылка на начало ветки:', end=' ')
+    print('Username:', end=' ')
+    username = input()
+
+    print('Password:', end=' ')
+    password = input()
+
+    print('Link on root:', end=' ')
     url = URL(input())
 
     map_id = url.query.get('mapid')
     node_id = url.query.get('nodeid')
     async with RfApiClient(
-        auth=UserAuth(USERNAME, PASSWORD),
+        auth=UserAuth(username, password),
     ) as api_client:
         m = await api_client.maps.get_map_nodes(map_id, node_id)
         print_tree(m, url)

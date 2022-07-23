@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta content="text/html; charset=utf8">
+   <style>
+   table {
+      font-family: times new roman, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+   }
+   td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+   }
+
+   tr:nth-child(even) {
+      background-color: #dddddd;
+   }
+   </style>
+</head>
+<body>
+<table>
+   <TR>
+      <TD>Узел</TD>
+      <TD>Заголовок</TD>
+      <TD>Тип узла</TD>
+   </TR>
+
+   {% for item in items %}
+   <TR>
+      <TD><a href="{{item.link}}">Link</a></TD>
+      <TD contenteditable="{{item.contenteditable}}">{{item.head}}</TD>
+      <TD>{{item.node_type}}</TD>
+   </TR>
+   {% endfor %}
+</table>
+
+</body>
+</html>

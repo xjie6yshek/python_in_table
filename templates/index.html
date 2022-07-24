@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta content="text/html; charset=utf8">
+   <meta content="text/html; charset=UTF-8">
    <style>
    table {
       font-family: times new roman, sans-serif;
@@ -30,7 +30,7 @@
    {% for item in items %}
    <TR>
       <TD><a href="{{item.link}}">Link</a></TD>
-      <TD contenteditable="{{item.contenteditable}}">{{item.head}}</TD>
+      <TD>{{item.head}}</TD>
       <TD>{{item.node_type}}</TD>
    </TR>
    {% endfor %}
